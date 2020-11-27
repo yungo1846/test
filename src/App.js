@@ -61,7 +61,7 @@ export default class App extends Component {
     submit = (e) => {
         e.preventDefault()
         if (this.state.selectedCompany !== "default") {
-            var delete_or_not = window.confirm(this.state.selectedCompany + '을(를) 정말로 삭제 하시겠습니까?')
+            var delete_or_not = window.confirm('\''+this.state.selectedCompany+'\'' + '을(를) 정말로 삭제 하시겠습니까?')
             if (delete_or_not) {
                 this.handleCompanyDelete();
             } else {
