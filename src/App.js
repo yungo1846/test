@@ -26,7 +26,6 @@ export default class App extends Component {
         del_clicked: false,
         plus_clicked: true,
         new_company: "",
-        company_del_clicked: false,
     }
 
     static defaultProps = {
@@ -62,20 +61,12 @@ export default class App extends Component {
     submit = (e) => {
         e.preventDefault()
         if (this.state.selectedCompany !== "default") {
-            confirmAlert({
-              title: '삭제 확인',
-              message: '\''+this.state.selectedCompany+'\''+'을(를) 정말로 삭제 하시겠습니까?',
-              buttons: [
-                {
-                  label: 'Yes',
-                  onClick: () => this.handleCompanyDelete()
-                },
-                {
-                  label: 'No',
-                  onClick: () => alert('취소 되었습니다.')
-                }
-              ]
-            });
+            var delete_or_not = window.confirm(this.state.selectedCompany + '을(를) 정말로 삭제 하시겠습니까?')
+            if (delete_or_not) {
+                this.handleCompanyDelete();
+            } else {
+                alert("취소 되었습니다.");
+            }
         }
       };
 
@@ -85,13 +76,6 @@ export default class App extends Component {
         }, () => console.log(this.state.company_clicked))
       }
       
-    handleCompanyDelClicked = (e) => {
-        const { company_del_clicked } = this.state;
-        this.setState({
-            company_del_clicked: !company_del_clicked,
-        },() => { console.log(this.state.company_clicked) })
-    }
-    
     handleCompanyDelete = () => {
         this.setState({
             company: this.state.company.filter(company => company !== this.state.selectedCompany),
