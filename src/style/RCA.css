@@ -3,18 +3,19 @@
 }
 .entire {
   height: 100vh;
+  background-color: #A9BDCE;
 }
 
 .test-layout {
   width: 60vw;
-  height: 80vh;
+  height: 90vh;
 }
 /* this test-layout class for test it will be terminated */
 
 .RCA-app-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 
@@ -22,6 +23,8 @@
 .RCA-header-container {
   flex-basis: 50px;
   background-color: rgb(224, 215, 202);
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
   display: flex;
 }
 
@@ -47,6 +50,7 @@
 
 .RCA-header-middle {
   line-height: 50px;
+  border-top-left-radius: 0.375rem;
 }
 
 .RCA-header-calendarYM {
@@ -68,7 +72,7 @@
   float: left;
   height: 40px;
   line-height: 40px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* calendar component */
@@ -94,7 +98,7 @@
   box-sizing: border-box;
   background-color: rgb(107, 107, 108);
   border: 0.1px solid white;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 50px;
 }
 
@@ -126,7 +130,7 @@
   box-sizing: border-box;
   position: relative;
   flex-basis: 14.2857143%;
-  height: 12vh;
+  height: 12.5vh;
   border: 0.1px solid white;
   border-top: none;
   background-color: rgb(225, 224, 224);
@@ -144,7 +148,7 @@
 
 .RCA-calendar-day-label {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   text-align: right;
   line-height: 25px;
   top: 5px;
@@ -174,6 +178,10 @@
 }
 
 .input_box {
+  height: 100vh;
+}
+
+.small_input_box {
   height: 80vh;
 }
 

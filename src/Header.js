@@ -4,10 +4,10 @@ export default class Header extends Component {
     render() {
         return (
             <div className="RCA-header-container">
-                <h2 className="RCA-header-calendarYM RCA-header-middle font-bold text-3xl">
+                <h2 className="RCA-header-calendarYM RCA-header-middle font-bold text-xl">
                     {this.props.calendarYM}
                 </h2>
-                <h3 className="RCA-header-today RCA-header-middle font-bold text-2xl mr-5">
+                <h3 className="RCA-header-today RCA-header-middle font-bold text-lg mr-5">
                     {this.props.today}
                 </h3>
                 <ul className="RCA-header-buttons RCA-header-middle">

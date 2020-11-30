@@ -98,7 +98,7 @@ class Week extends Component {
           <div>
           {this.props.schedule.map((info, i) => {
             if (dayInfo.yearMonthDayFormat === info.date) {
-                return (<div className={"text-right font-semibold schedule" + info.id%10}>{info.title}</div>)
+                return (<div className={"text-right text-xs font-semibold schedule" + info.id%10}>{info.title}</div>)
               }
             })}
           </div>

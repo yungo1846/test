@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import Calendar from './Calendar'
 import delete_img from './style/delete.png';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import logo_img from './style/vision_ic.png';
 
 import moment from 'moment'
 
@@ -153,33 +152,34 @@ export default class App extends Component {
     render() {
         return (
             <div>
-            <div className="entire flex justify-center items-center">
-            <div className="border border-black rounded-md w-1/6 input_box flex flex-col">
-          <div className="flex-1 ml-3 mt-5">
-                            <div className="font-bold text-3xl mb-3">회사별 일정</div>
+            <div className="entire flex justify-between items-center">
+            <div className="bg-white w-1/6 input_box flex flex-col">
+                <img src={logo_img} className="w-32 mt-5 ml-2"></img>
+          <div className="flex-1 ml-2 mt-5">
+                            <div className="font-bold text-xl mb-3">회사별 일정</div>
                             <div className="flex flex-row flex-wrap">
-                            <div className={"cursor-pointer border rounded-lg text-center bg-blue-300 w-2/6 h-10 text-xl font-medium mx-1 my-2 "+(this.state.company_clicked==="전체" ? 'btn_clicked' : '')} id="전체" onClick={this.handleCompanyClicked}>전체</div>
+                            <div className={"cursor-pointer border rounded-lg text-center bg-gray-300 w-5/12 h-10 text-base font-medium pt-1 mx-2 my-2 "+(this.state.company_clicked==="전체" ? 'btn_clicked' : '')} id="전체" onClick={this.handleCompanyClicked}>전체</div>
             {this.state.company.map((company, i) => {
               return(
-                  <div className={"cursor-pointer border rounded-lg text-center bg-blue-300 w-2/6 h-10 text-xl font-medium mx-1 my-2 "+(this.state.company_clicked===company ? 'btn_clicked' : '')} id={company} onClick={this.handleCompanyClicked}>{company}</div>)
+                  <div className={"cursor-pointer border rounded-lg text-center bg-gray-300 w-5/12 h-10 text-base font-medium pt-1 mx-2 my-2 "+(this.state.company_clicked===company ? 'btn_clicked' : '')} id={company} onClick={this.handleCompanyClicked}>{company}</div>)
             })}
                         </div>
                             </div>
                         <div className="flex-1">
-          <div className="ml-3 mt-5">
-          <div className="font-bold btn text-3xl">회사 추가</div>
+          <div className="ml-2 mt-5">
+          <div className="font-bold btn text-xl">회사 추가</div>
           <form onSubmit={this.handleCompanySubmit}>
             <div className="flex flex-row">
-                            <input className="border border-black mt-2 h-10 w-4/6" type="text" id="new_company" value={this.new_company} onChange={this.companyChange}></input>
-                        <button className="border rounded-md w-16 font-bold text-2xl mt-1 ml-3 float-right text-center bg-blue-400">
+                            <input className="border border-black mt-2 w-4/6" type="text" id="new_company" value={this.new_company} onChange={this.companyChange}></input>
+                        <button className="border rounded-md w-16 font-bold text-base mt-2 ml-3 float-right text-center text-white bg-blue-700">
                                     저장
                         </button>
                         </div>
                         </form>
           </div>
-          <div className="ml-3 mt-5">
-                            <span className="cursor-pointer font-bold btn text-3xl">회사 삭제</span>
-                            <div className="flex flex-row"><form onSubmit={this.submit}><select name="del_company" className="mt-2 text-xl border border-black h-10" size="1" onChange={this.handleSelect}>
+          <div className="ml-2 mt-5">
+                            <span className="font-bold btn text-xl">회사 삭제</span>
+                            <div className="flex flex-row"><form onSubmit={this.submit}><select name="del_company" className="mt-2 text-base border border-black" size="1" onChange={this.handleSelect}>
                             <option value="default">회사를 선택하세요.</option>
                                 {this.state.company.map((company, i)=>{
                                     return(
@@ -187,14 +187,14 @@ export default class App extends Component {
                                     )
                                 })}
                             </select>
-                            <button className="border rounded-md w-16 font-bold text-2xl mt-2 ml-5 float-right text-center bg-red-600">
+                            <button className="border rounded-md w-16 font-bold text-base mt-2 ml-3 float-right text-center text-white bg-red-700">
                             삭제
                 </button></form></div>
                             </div>
                             </div>
         </div>
-                <div className="test-layout">
-                    <div className="RCA-app-container">
+                <div className="test-layout flex justify-center">
+                    <div className="RCA-app-container bg-white rounded-md">
                         <Header calendarYM={this.state.calendarYM.format("YYYY년 MM월")}
                             today={this.state.today.format("오늘 YYYY - MM - DD")}
                             moveMonth={this.moveMonth}
@@ -210,22 +210,19 @@ export default class App extends Component {
                     /> }
                     </div>
                 </div>
-                <div className="input_box border rounded-md border-black w-1/5 flex flex-col">
+                <div className="small_input_box rounded-l-md w-1/5 flex flex-col bg-white">
                     <div className="flex-1">
-                    <div className="font-bold text-4xl text-center mt-2">
-                        Work Calendar
-                    </div>
-                    <div className="mt-10 ml-3 font-bold text-4xl">
+                    <div className="mt-5 font-bold text-xl text-center">
                         {this.state.selected}
                     </div>
-                    <div className="mt-5 mb-2 ml-5 font-bold text-2xl">
+                    <div className="mt-5 mb-2 ml-5 font-bold text-base">
                         일정
                     </div>
                     <div>
                     {this.state.schedule.filter(schedule => (schedule.company===this.state.company_clicked) || this.state.company_clicked === "전체").map((info, i) => {
                     if (this.state.selected === info.date) {
                         return (
-                            <div className="break-all ml-8 text-xl font-bold">
+                            <div className="break-all ml-5 text-sm font-bold">
                                 <div className="flex flex-row">- {info.title}
                                     <button id={info.id} onClick={(e) =>this.deleteSchedule(e,info.id) }>
                                         <img src={delete_img} className="mx-2 w-4 h-4"></img>
@@ -239,15 +236,15 @@ export default class App extends Component {
                         </div>
                     <div className="flex-1">
                         <form onSubmit={this.handleSubmit}>
-                        <div className="font-bold ml-5 text-2xl">일정추가</div>
-                        <div className="mt-5 ml-8 font-bold text-xl">
-                        제목
+                        <div className="font-bold ml-5 text-base">일정추가</div>
+                        <div className="mt-2 ml-5 font-bold text-sm">
+                        * 제목
                         </div>
-                            <input className="border border-black mt-2 ml-8 w-5/6 h-8" type="text" id="title" value={this.title} onChange={this.titleChange} required></input>
-                            <div className="mt-5 ml-8 font-bold text-xl">
-                                회사
+                            <input className="border border-black mt-2 ml-5 w-5/6 h-6" type="text" id="title" value={this.title} onChange={this.titleChange} required></input>
+                            <div className="mt-3 ml-5 font-bold text-sm">
+                                * 회사
                         </div>
-                                <select name="company" className="mt-2 ml-8 text-xl border border-black" size="1" onChange={this.handleSelect} required>
+                                <select name="company" className="mt-2 ml-5 text-sm border border-black" size="1" onChange={this.handleSelect} required>
                                 <option value="">회사를 선택하세요.</option>
                                 {this.state.company.map((company, i)=>{
                                     return(
@@ -255,16 +252,16 @@ export default class App extends Component {
                                     )
                                 })}
                                 </select>
-                        <div className="mt-5 ml-8 font-bold text-xl">
-                                    종료 날짜
+                        <div className="mt-3 ml-5 font-bold text-sm">
+                                    * 종료 날짜
                         </div>
-                                <input className="mt-2 ml-8 text-xl" type="date" id="date" value={this.end_date} onChange={this.endDateChange} required></input>
-                        <div className="mt-5 ml-8 font-bold text-xl">
-                            설명
+                                <input className="mt-2 ml-5 text-sm" type="date" id="date" value={this.end_date} onChange={this.endDateChange} required></input>
+                        <div className="mt-3 ml-5 font-bold text-sm">
+                            * 설명
                         </div>
-                        <textarea className="border border-black mt-2 ml-8 w-5/6" rows="5" id="description" value={this.description} onChange={this.descriptionChange}></textarea>
+                        <textarea className="border border-black mt-2 ml-5 w-5/6" rows="2" id="description" value={this.description} onChange={this.descriptionChange}></textarea>
                         <br></br>
-                        <button className="border rounded-md w-16 font-bold text-2xl mt-10 mr-5 float-right text-center bg-blue-400">
+                        <button className="border rounded-md w-16 font-bold text-sm my-2 mr-5 float-right text-center text-white bg-blue-700">
                                     저장
                         </button>
                         </form>
