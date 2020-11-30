@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/test/static/css/main.8368760b.chunk.css",
-    "main.js": "/test/static/js/main.ea1e4168.chunk.js",
-    "main.js.map": "/test/static/js/main.ea1e4168.chunk.js.map",
-    "runtime-main.js": "/test/static/js/runtime-main.825ef877.js",
-    "runtime-main.js.map": "/test/static/js/runtime-main.825ef877.js.map",
-    "static/css/2.7d97138c.chunk.css": "/test/static/css/2.7d97138c.chunk.css",
-    "static/js/2.bce06164.chunk.js": "/test/static/js/2.bce06164.chunk.js",
-    "static/js/2.bce06164.chunk.js.map": "/test/static/js/2.bce06164.chunk.js.map",
-    "static/js/3.c47202b4.chunk.js": "/test/static/js/3.c47202b4.chunk.js",
-    "static/js/3.c47202b4.chunk.js.map": "/test/static/js/3.c47202b4.chunk.js.map",
+    "main.css": "/test/static/css/main.7a94fa58.chunk.css",
+    "main.js": "/test/static/js/main.49f80292.chunk.js",
+    "main.js.map": "/test/static/js/main.49f80292.chunk.js.map",
+    "runtime-main.js": "/test/static/js/runtime-main.8483ae6d.js",
+    "runtime-main.js.map": "/test/static/js/runtime-main.8483ae6d.js.map",
+    "static/js/2.072a9261.chunk.js": "/test/static/js/2.072a9261.chunk.js",
+    "static/js/2.072a9261.chunk.js.map": "/test/static/js/2.072a9261.chunk.js.map",
+    "static/js/3.8ce0e150.chunk.js": "/test/static/js/3.8ce0e150.chunk.js",
+    "static/js/3.8ce0e150.chunk.js.map": "/test/static/js/3.8ce0e150.chunk.js.map",
     "index.html": "/test/index.html",
-    "static/css/2.7d97138c.chunk.css.map": "/test/static/css/2.7d97138c.chunk.css.map",
-    "static/css/main.8368760b.chunk.css.map": "/test/static/css/main.8368760b.chunk.css.map",
-    "static/js/2.bce06164.chunk.js.LICENSE.txt": "/test/static/js/2.bce06164.chunk.js.LICENSE.txt",
-    "static/media/delete.46451b91.png": "/test/static/media/delete.46451b91.png"
+    "static/css/main.7a94fa58.chunk.css.map": "/test/static/css/main.7a94fa58.chunk.css.map",
+    "static/js/2.072a9261.chunk.js.LICENSE.txt": "/test/static/js/2.072a9261.chunk.js.LICENSE.txt",
+    "static/media/delete.46451b91.png": "/test/static/media/delete.46451b91.png",
+    "static/media/vision_ic.72d40924.png": "/test/static/media/vision_ic.72d40924.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.825ef877.js",
-    "static/css/2.7d97138c.chunk.css",
-    "static/js/2.bce06164.chunk.js",
-    "static/css/main.8368760b.chunk.css",
-    "static/js/main.ea1e4168.chunk.js"
+    "static/js/runtime-main.8483ae6d.js",
+    "static/js/2.072a9261.chunk.js",
+    "static/css/main.7a94fa58.chunk.css",
+    "static/js/main.49f80292.chunk.js"
   ]
 }
